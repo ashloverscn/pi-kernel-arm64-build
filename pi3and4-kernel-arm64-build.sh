@@ -24,8 +24,8 @@ mkdir $PROJECT_DIR
 cd $PROJECT_DIR
 
 # update && upgrade and install necessary dependency packages
-sudo apt update
-sudo apt upgrade
+sudo apt update 
+sudo apt upgrade -y
 sudo apt install -y wget git bc bison flex libssl-dev make libc6-dev libncurses5-dev crossbuild-essential-armhf crossbuild-essential-arm64
 
 # download the kernel source code
