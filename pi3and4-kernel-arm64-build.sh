@@ -41,7 +41,7 @@ cd linux
 git checkout $COMMIT_HASH
  
 # Patch the kernel
-patch -p1 < ../patch-$RT_PATCH_VERSION.patch
+patch -p1 < ../patch-$RT_PATCH_VERSION.patch -y
 
 # Clean any previous kernel build and prepare a new configuration 
 make ARCH=$ARCH CROSS_COMPILE=$COMPILER mrproper
