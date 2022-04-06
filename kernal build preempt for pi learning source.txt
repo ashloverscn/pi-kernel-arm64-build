@@ -1,4 +1,5 @@
 -1:
+https://github.com/emlid/linux-rt-rpi
 https://discuss.ardupilot.org/t/building-an-autopilot-from-scratch-using-a-raspberrypi-zero-mini-zee/11722
 https://wiki.linuxfoundation.org/realtime/start
 https://rt.wiki.kernel.org/index.php/Main_Page
