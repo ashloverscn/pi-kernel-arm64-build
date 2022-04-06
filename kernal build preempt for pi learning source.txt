@@ -1,4 +1,5 @@
 -1:
+https://elinux.org/Realtime_Testing_Best_Practices
 https://bootlin.com/doc/training/preempt-rt/preempt-rt-slides.pdf
 https://github.com/emlid/linux-rt-rpi
 https://discuss.ardupilot.org/t/building-an-autopilot-from-scratch-using-a-raspberrypi-zero-mini-zee/11722
@@ -6,6 +7,7 @@ https://wiki.linuxfoundation.org/realtime/start
 https://rt.wiki.kernel.org/index.php/Main_Page
 http://www.frank-durr.de/?p=203
 https://www.raspberrypi.com/documentation/computers/linux_kernel.html#kernel
+https://s-matyukevich.github.io/raspberry-pi-os/
 https://yuhei1-horibe.medium.com/building-and-booting-fully-customized-os-on-raspberry-pi-f743899c79d
 0:
 https://rickcarlino.com/2021/build-a-raspbery-pi-linux-system-the-hard-way.html
