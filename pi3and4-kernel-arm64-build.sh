@@ -29,7 +29,7 @@ sudo apt upgrade -y
 sudo apt install -y wget git bc bison flex libssl-dev make libc6-dev libncurses5-dev crossbuild-essential-armhf crossbuild-essential-arm64
 
 # download the kernel source code
-git clone --branch $KERNEL_BRANCH https://github.com/raspberrypi/linux
+git clone --depth=1 --branch $KERNEL_BRANCH https://github.com/raspberrypi/linux
 
 # download the RT patch and extract it in the source directory
 wget http://cdn.kernel.org/pub/linux/kernel/projects/rt/$KERNEL_VERSION/older/patch-$RT_PATCH_VERSION.patch.gz
