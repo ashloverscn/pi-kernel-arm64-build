@@ -8,7 +8,7 @@
 # Define environment variables to the target source kernel
 
 KERNEL_VERSION=5.15
-RT_PATCH_VERSION=$KERNEL_VERSION.35-rt39
+RT_PATCH_VERSION=$KERNEL_VERSION.32-rt39
 DEFCONFIG=bcm2711_defconfig
 ARCH=arm
 TARGET=arm-linux-gnueabihf
