@@ -43,6 +43,7 @@ wget http://cdn.kernel.org/pub/linux/kernel/projects/rt/$KERNEL_VERSION/older/pa
 gunzip xf patch-$RT_PATCH_VERSION.patch.gz
  
 cd linux
+
 # clean previous build
 make clean
 
