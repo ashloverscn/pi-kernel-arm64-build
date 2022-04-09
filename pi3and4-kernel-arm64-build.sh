@@ -16,7 +16,8 @@ TARGET=arm-linux-gnueabihf
  
 KERNEL_BRANCH=rpi-$KERNEL_VERSION.y
 COMPILER=$TARGET-
- 
+
+# Automatic Zone no input need after this
 # All work will be done in $PWD/rtkernel.  The final result will be packaged as $PWD/rtkernel/result
 PROJECT_DIR=`pwd`/rtkernel
 rm -rf $PROJECT_DIR
