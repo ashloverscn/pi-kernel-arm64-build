@@ -19,7 +19,8 @@ ARCH=arm
 TARGET=arm-linux-gnueabihf
 #TARGET=aarch64-linux-gnu
 #KERNEL=kernel8
- 
+LINUX=zImage # for 32 bit
+#LINUX=Image # for 64 bit
 KERNEL_BRANCH=rpi-$KERNEL_VERSION.y
 COMPILER=$TARGET-
 
@@ -62,7 +63,7 @@ make ARCH=$ARCH CROSS_COMPILE=$COMPILER $DEFCONFIG
 make ARCH=$ARCH CROSS_COMPILE=$COMPILER menuconfig
  
 # Compile
-make -j`nproc` ARCH=$ARCH CROSS_COMPILE=$COMPILER Image modules dtbs
+make -j`nproc` ARCH=$ARCH CROSS_COMPILE=$COMPILER $LINUX modules dtbs
 
 # copy assets to the $PROJECT_DIR/result directory
 RESULT_DIR=$PROJECT_DIR/result
