@@ -11,6 +11,7 @@ http://www.frank-durr.de/?p=203
 https://www.raspberrypi.com/documentation/computers/linux_kernel.html#kernel
 https://s-matyukevich.github.io/raspberry-pi-os/
 https://yuhei1-horibe.medium.com/building-and-booting-fully-customized-os-on-raspberry-pi-f743899c79d
+https://docs.windriver.com/bundle/Wind_River_Linux_Kernel_Configuration_and_Build_LTS_1/page/dva1537990303268.html
 0:
 https://rickcarlino.com/2021/build-a-raspbery-pi-linux-system-the-hard-way.html
 1:
