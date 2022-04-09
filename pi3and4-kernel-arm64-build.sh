@@ -45,7 +45,7 @@ gunzip xf patch-$RT_PATCH_VERSION.patch.gz
 cd linux
 
 # clean previous build
-make clean
+#make ARCH=$ARCH CROSS_COMPILE=$COMPILER clean
 
 # Need this to get precisely the correct kernel version
 git checkout $KERNEL_BRANCH
