@@ -6,12 +6,12 @@
 #https://cdn.kernel.org/pub/linux/kernel/projects/rt/5.15/ #### latest rt patch ####
 
 # Define environment variables to the target source kernel
-KERNEL_VERSION=5.10
+
+KERNEL_VERSION=5.15
 RT_PATCH_VERSION=$KERNEL_VERSION.35-rt39
-COMMIT_HASH=53a5ac4935c500d32bfc465551cc5107e091c09c
 DEFCONFIG=bcm2711_defconfig
-ARCH=arm64
-TARGET=aarch64-linux-gnu
+ARCH=arm
+TARGET=arm-linux-gnueabihf
 #KERNEL=kernel8
  
 KERNEL_BRANCH=rpi-$KERNEL_VERSION.y
@@ -29,7 +29,7 @@ sudo apt upgrade -y
 sudo apt install -y wget git bc bison flex libssl-dev make libc6-dev libncurses5-dev crossbuild-essential-armhf crossbuild-essential-arm64
 
 # download the kernel source code
-git clone --depth=1 --branch $KERNEL_BRANCH https://github.com/raspberrypi/linux
+git clone --branch $KERNEL_BRANCH https://github.com/raspberrypi/linux
 
 # download the RT patch and extract it in the source directory
 wget http://cdn.kernel.org/pub/linux/kernel/projects/rt/$KERNEL_VERSION/older/patch-$RT_PATCH_VERSION.patch.gz
@@ -38,7 +38,7 @@ gunzip xf patch-$RT_PATCH_VERSION.patch.gz
 cd linux
 
 # Need this to get precisely the correct kernel version
-git checkout $COMMIT_HASH
+git checkout $KERNEL_BRANCH
  
 # Patch the kernel
 patch -p1 < ../patch-$RT_PATCH_VERSION.patch
@@ -52,7 +52,7 @@ make ARCH=$ARCH CROSS_COMPILE=$COMPILER $DEFCONFIG
 make ARCH=$ARCH CROSS_COMPILE=$COMPILER menuconfig
  
 # Compile
-make -j16 ARCH=$ARCH CROSS_COMPILE=$COMPILER Image modules dtbs
+make -j`nproc` ARCH=$ARCH CROSS_COMPILE=$COMPILER Image modules dtbs
 
 # copy assets to the $PROJECT_DIR/result directory
 RESULT_DIR=$PROJECT_DIR/result
