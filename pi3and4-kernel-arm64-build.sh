@@ -7,29 +7,29 @@ whoami
 
 # Define environment variables to the target source kernel
 
-KERNEL_VERSION=5.15
+KERNEL_VERSION=5.10
 # You need to match the linux kernel source sub version with the patch sub version 
 # To check current sub version run "head Makefile -n 3" inside source directory
-RT_PATCH_VERSION=$KERNEL_VERSION.32-rt39
+RT_PATCH_VERSION=$KERNEL_VERSION.35-rt39
 DEFCONFIG=bcm2711_defconfig
 # 32-bit # kernel7 # For Raspberry Pi2,3,3+ and Zero2W # bcm2709_defconfig #
 # 32-bit # kernel7l # For Raspberry Pi 4 and 400 # bcm2711_defconfig #
 # 32-bit # kernel # For Raspberry Pi 1, Zero and Zero W and CM1 # bcmrpi_defconfig #
 # 64-bit # kernel8 # For Raspberry Pi3,3+,4,400,Zero2W,andCM3, 3+ and 4 # bcm2711_defconfig #
-ARCH=arm
-#ARCH=arm64
-TARGET=arm-linux-gnueabihf
-#TARGET=aarch64-linux-gnu
+#ARCH=arm
+ARCH=arm64
+#TARGET=arm-linux-gnueabihf
+TARGET=aarch64-linux-gnu
 #KERNEL=kernel8
-LINUX=zImage # for 32 bit
-#LINUX=Image # for 64 bit
+#LINUX=zImage # for 32 bit
+LINUX=Image # for 64 bit
 KERNEL_BRANCH=rpi-$KERNEL_VERSION.y
 COMPILER=$TARGET-
 
 # Automatic Zone no input need after this
 # All work will be done in $PWD/rtkernel.  The final result will be packaged as $PWD/rtkernel/result
-PROJECT_DIR=`pwd`/rtkernel
-rm -rf $PROJECT_DIR
+PROJECT_DIR=`pwd`/rtkernel-$KERNEL_VERSION
+#rm -rf $PROJECT_DIR
 mkdir $PROJECT_DIR
 cd $PROJECT_DIR
 
