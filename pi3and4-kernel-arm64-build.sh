@@ -10,8 +10,8 @@
 KERNEL_VERSION=5.15
 RT_PATCH_VERSION=$KERNEL_VERSION.32-rt39
 DEFCONFIG=bcm2709_defconfig
-# 32-bit # kernel7 # For Raspberry Pi2,3,3+ and Zero2W bcm2709_defconfig #
-# 32-bit # kernel7l # For Raspberry Pi 4 and 400 bcm2711_defconfig #
+# 32-bit # kernel7 # For Raspberry Pi2,3,3+ and Zero2W # bcm2709_defconfig #
+# 32-bit # kernel7l # For Raspberry Pi 4 and 400 # bcm2711_defconfig #
 # 32-bit # kernel # For Raspberry Pi 1, Zero and Zero W and CM1 # bcmrpi_defconfig #
 # 64-bit # kernel8 # For Raspberry Pi3,3+,4,400,Zero2W,andCM3, 3+ and 4 # bcm2711_defconfig #
 ARCH=arm
