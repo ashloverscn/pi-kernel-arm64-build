@@ -1,8 +1,8 @@
 #!/bin/bash
 whoami
-# The arm64 bit PreeMT Patch for RT-Linux OS on Raspbian x64 BullsEye #
+# The arm64 bit PreeMPT Patch for RT-Linux OS on Raspbian x64 BullsEye #
 #https://github.com/raspberrypi/linux #### pi kernel source ####
-#https://wiki.linuxfoundation.org/realtime/start #### rt patch for preemt kernel ####
+#https://wiki.linuxfoundation.org/realtime/start #### rt patch for preempt kernel ####
 #https://cdn.kernel.org/pub/linux/kernel/projects/rt/5.15/ #### latest rt patch ####
 
 # Define environment variables to the target source kernel
@@ -61,7 +61,9 @@ make ARCH=$ARCH CROSS_COMPILE=$COMPILER mrproper
 make ARCH=$ARCH CROSS_COMPILE=$COMPILER $DEFCONFIG
 
 # Configure the kernel
-# At this step, select "General setup" --> "Preemption Model" --> "Fully Preemptible Kernel (Real-Time)"
+# At this step, select "General setup" --> "
+
+mption Model" --> "Fully Preemptible Kernel (Real-Time)"
 make ARCH=$ARCH CROSS_COMPILE=$COMPILER menuconfig
  
 # Compile
