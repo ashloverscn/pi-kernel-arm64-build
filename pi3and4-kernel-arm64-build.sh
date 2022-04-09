@@ -8,6 +8,8 @@ whoami
 # Define environment variables to the target source kernel
 
 KERNEL_VERSION=5.15
+# You need to match the linux kernel source sub version with the patch sub version 
+# To check current sub version run "head Makefile -n 3" inside source directory
 RT_PATCH_VERSION=$KERNEL_VERSION.32-rt39
 DEFCONFIG=bcm2711_defconfig
 # 32-bit # kernel7 # For Raspberry Pi2,3,3+ and Zero2W # bcm2709_defconfig #
