@@ -1,5 +1,5 @@
 #!/bin/bash
-
+whoami
 # The arm64 bit PreeMT Patch for RT-Linux OS on Raspbian x64 BullsEye #
 #https://github.com/raspberrypi/linux #### pi kernel source ####
 #https://wiki.linuxfoundation.org/realtime/start #### rt patch for preemt kernel ####
