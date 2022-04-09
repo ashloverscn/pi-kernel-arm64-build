@@ -10,8 +10,13 @@
 KERNEL_VERSION=5.15
 RT_PATCH_VERSION=$KERNEL_VERSION.32-rt39
 DEFCONFIG=bcm2711_defconfig
+# 32-bit For Raspberry Pi2,3,3+ and Zero2W # bcm2709_defconfig #
+# 32-bit For Raspberry Pi 4 and 400 # bcm2711_defconfig
+# 32-bit For Raspberry Pi 1, Zero and Zero W and CM1 # bcmrpi_defconfig #
 ARCH=arm
+#ARCH=arm64
 TARGET=arm-linux-gnueabihf
+#TARGET=aarch64-linux-gnu
 #KERNEL=kernel8
  
 KERNEL_BRANCH=rpi-$KERNEL_VERSION.y
