@@ -62,7 +62,7 @@ make ARCH=$ARCH CROSS_COMPILE=$COMPILER $DEFCONFIG
 
 # Configure the kernel
 # At this step, select "General setup" --> "Preemption Model" --> "Fully Preemptible Kernel (Real-Time)"
-# For 64 bit processors disable "Virtualization" --> KVM
+# For 64 bit processors, unselect (inside menu only, not whole tree) "Virtualization" -->  "Kernel-based Virtual Machine (KVM) support (NEW)"
 make ARCH=$ARCH CROSS_COMPILE=$COMPILER menuconfig
  
 # Compile
