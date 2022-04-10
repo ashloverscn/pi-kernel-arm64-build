@@ -61,9 +61,8 @@ make ARCH=$ARCH CROSS_COMPILE=$COMPILER mrproper
 make ARCH=$ARCH CROSS_COMPILE=$COMPILER $DEFCONFIG
 
 # Configure the kernel
-# At this step, select "General setup" --> "
-
-mption Model" --> "Fully Preemptible Kernel (Real-Time)"
+# At this step, select "General setup" --> "Preemption Model" --> "Fully Preemptible Kernel (Real-Time)"
+# For 64 bit processors disable "Virtualization" --> KVM
 make ARCH=$ARCH CROSS_COMPILE=$COMPILER menuconfig
  
 # Compile
