@@ -18,14 +18,19 @@ sudo chmod +x <scriptname>.sh
 finally execute the script and grab a cup of coffee:
 sudo ./<scriptname>.sh
 
-Testing real-time capabilites using cyclictest utility
-Installing cyclictest utility on Raspberry Pi:
+### Testing real-time capabilites using cyclictest utility
 
+Installing cyclictest utility on Raspberry Pi:
+```
 git clone git://git.kernel.org/pub/scm/linux/kernel/git/clrkwllms/rt-tests.git 
 cd rt-tests
 make all
 cp ./cyclictest /usr/bin/
 cd ~
-Testing real-time:
+```
 
-sudo cyclictest -l1000000 -m -n -a0 -t1 
+Testing real-time:
+```
+sudo cyclictest -l1000000 -m -n -a0 -t1 -p99 -i400 -h400 -q
+```
+
