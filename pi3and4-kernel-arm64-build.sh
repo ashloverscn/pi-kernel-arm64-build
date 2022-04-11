@@ -80,13 +80,11 @@ make ARCH=$ARCH CROSS_COMPILE=$COMPILER INSTALL_MOD_PATH=$EXT4_DIR modules_insta
 cp arch/$ARCH/boot/$LINUX $FAT32_DIR/$KERNEL.img
 if [ $LINUX = "zImage" ]
 then
-echo "32bit"
 cp arch/$ARCH/boot/zImage /boot/$KERNEL.img
 cp arch/$ARCH/boot/dts/*.dtb /boot/
 fi
 if [ $LINUX = "Image" ]
 then
-echo "64bit"
 cp arch/$ARCH/boot/Image /boot/$KERNEL.img
 cp arch/$ARCH/boot/dts/broadcom/*.dtb /boot/
 fi
@@ -94,4 +92,7 @@ mkdir $FAT32_DIR/overlays
 cp arch/$ARCH/boot/dts/overlays/*.dtb* $FAT32_DIR/overlays/
 # this might show up as non existing file or directory but its not an error
 cp arch/$ARCH/boot/dts/overlays/README $FAT32_DIR/overlays/
+
+echo "All complete files copied to result directory under rt-kernel directory"
+
 
