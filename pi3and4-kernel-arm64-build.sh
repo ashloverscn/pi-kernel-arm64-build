@@ -20,7 +20,7 @@ DEFCONFIG=bcm2711_defconfig
 ARCH=arm64
 #TARGET=arm-linux-gnueabihf
 TARGET=aarch64-linux-gnu
-#KERNEL=kernel8
+KERNEL=kernel8-rt
 #LINUX=zImage # for 32 bit
 LINUX=Image # for 64 bit
 KERNEL_BRANCH=rpi-$KERNEL_VERSION.y
@@ -36,7 +36,7 @@ cd $PROJECT_DIR
 # update && upgrade and install necessary dependency packages
 #sudo apt update --allow-releaseinfo-change
 sudo apt update 
-sudo apt upgrade -y
+#sudo apt upgrade -y
 sudo apt install -y wget git bc bison flex libssl-dev make libc6-dev libncurses5-dev crossbuild-essential-armhf crossbuild-essential-arm64
 
 # download the kernel source code
@@ -77,8 +77,19 @@ FAT32_DIR=$RESULT_DIR/fat32
 mkdir $FAT32_DIR
 mkdir $EXT4_DIR
 make ARCH=$ARCH CROSS_COMPILE=$COMPILER INSTALL_MOD_PATH=$EXT4_DIR modules_install
-cp arch/$ARCH/boot/$LINUX $FAT32_DIR/kernel-rt.img
-cp arch/$ARCH/boot/dts/*.dtb $FAT32_DIR/
+cp arch/$ARCH/boot/$LINUX $FAT32_DIR/$KERNEL.img
+if [ $LINUX = "zImage" ]
+then
+echo "32bit"
+cp arch/$ARCH/boot/zImage /boot/$KERNEL.img
+cp arch/$ARCH/boot/dts/*.dtb /boot/
+fi
+if [ $LINUX = "Image" ]
+then
+echo "64bit"
+cp arch/$ARCH/boot/Image /boot/$KERNEL.img
+cp arch/$ARCH/boot/dts/broadcom/*.dtb /boot/
+fi
 mkdir $FAT32_DIR/overlays
 cp arch/$ARCH/boot/dts/overlays/*.dtb* $FAT32_DIR/overlays/
 # this might show up as non existing file or directory but its not an error
