@@ -69,7 +69,7 @@ make modules_install
 # For 32 bit copy boot files to boot partition
 if [ $LINUX = "zImage" ]
 then
-echo "32bit"
+echo "installing 32bit kernel"
 sudo cp arch/arm/boot/zImage /boot/$KERNEL.img
 sudo cp arch/arm/boot/dts/*.dtb /boot/
 sudo cp arch/arm/boot/dts/overlays/*.dtb* /boot/overlays/
@@ -79,7 +79,7 @@ fi
 # For 64 bit copy boot files to boot partition
 if [ $LINUX = "Image" ]
 then
-echo "64bit"
+echo "installing 64bit kernel"
 sudo cp arch/arm64/boot/Image /boot/$KERNEL.img
 sudo cp arch/arm64/boot/dts/broadcom/*.dtb /boot/
 sudo cp arch/arm64/boot/dts/overlays/*.dtb* /boot/overlays/
