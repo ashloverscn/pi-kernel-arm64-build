@@ -29,38 +29,39 @@ mkdir $PROJECT_DIR
 cd $PROJECT_DIR
 
 # update && upgrade and install necessary dependency packages
-#sudo apt update 
+sudo apt update --allow-releaseinfo-change
+sudo apt update 
 #sudo apt upgrade -y
-#sudo apt install -y wget git bc bison flex libssl-dev make libc6-dev libncurses5-dev crossbuild-essential-armhf crossbuild-essential-arm64
+sudo apt install -y wget git bc bison flex libssl-dev make libc6-dev libncurses5-dev crossbuild-essential-armhf crossbuild-essential-arm64
 
 # download the kernel source code
-#git clone --branch $KERNEL_BRANCH https://github.com/raspberrypi/linux
+git clone --branch $KERNEL_BRANCH https://github.com/raspberrypi/linux
 
 # download the RT patch and extract it in the source directory
-#wget http://cdn.kernel.org/pub/linux/kernel/projects/rt/$KERNEL_VERSION/older/patch-$RT_PATCH_VERSION.patch.gz
-#gunzip xf patch-$RT_PATCH_VERSION.patch.gz
+wget http://cdn.kernel.org/pub/linux/kernel/projects/rt/$KERNEL_VERSION/older/patch-$RT_PATCH_VERSION.patch.gz
+gunzip xf patch-$RT_PATCH_VERSION.patch.gz
  
 cd linux
 
 # clean previous build
-#make clean
+make clean
 # Need this to get precisely the correct kernel version
 git checkout $KERNEL_BRANCH
  
 # Patch the kernel
-#patch -p1 < ../patch-$RT_PATCH_VERSION.patch
+patch -p1 < ../patch-$RT_PATCH_VERSION.patch
 
 # Clean any previous kernel build and prepare a new configuration 
-#make mrproper
-#make $DEFCONFIG
+make mrproper
+make $DEFCONFIG
 
 # Configure the kernel
 # At this step, select "General setup" --> "Preemption Model" --> "Fully Preemptible Kernel (Real-Time)"
 # For 64 bit processors, unselect (inside menu only, not whole tree) "Virtualization" -->  "Kernel-based Virtual Machine (KVM) support (NEW)"
-#make menuconfig
+make menuconfig
 
 # Compile
-#make -j`nproc` $LINUX modules dtbs
+make -j`nproc` $LINUX modules dtbs
 
 # install modules to the default modules directory
 make modules_install
