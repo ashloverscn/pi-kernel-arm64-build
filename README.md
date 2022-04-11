@@ -1,5 +1,5 @@
 # pi-kernel-arm64-build
-compile the raspberry pi kernel from source with PreeMT patch .This is the standard way to compile and setup toolchain for cross compilation of kernal for raspberry as per the rasberry foundation, up to date documentation. I found a shell script for doing this with arm 32 bit , but i was only convinced when i tested it for my self and tweaked the shell script . I will be commiting more build script for specific build and with new tweaks as much as possible
+compile the raspberry pi kernel from source with PreeMPT patch .This is the standard way to compile and setup toolchain for cross compilation of kernal for raspberry as per the rasberry foundation, up to date documentation. I found a shell script for doing this with arm 32 bit , but i was only convinced when i tested it for my self and tweaked the shell script . I will be commiting more build script for specific build and with new tweaks as much as possible
 
 dont forget to check me out on 
 https://youtube.com/ashloverscn
