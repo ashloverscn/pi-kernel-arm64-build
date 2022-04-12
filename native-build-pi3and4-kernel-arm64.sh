@@ -87,3 +87,5 @@ sudo cp arch/arm64/boot/dts/overlays/README /boot/overlays/
 fi
 
 echo "All complete,  MODULES, DTBS and BOOT files copied to respective partition on the sdcard"
+echo "Create an entry in the /boot/config.txt of rpi's sdcard as "kernel=$KERNEL.img" and reboot to boot in new kernel"
+
