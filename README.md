@@ -34,4 +34,6 @@ Testing real-time:
 sudo cyclictest -l1000000 -m -n -a0 -t1 -p99 -i400 -h400 -q
 ```
 for better example check this out
+https://wiki.linuxfoundation.org/realtime/documentation/howto/tools/cyclictest/start
+and
 https://people.redhat.com/williams/latency-howto/rt-latency-howto.txt
