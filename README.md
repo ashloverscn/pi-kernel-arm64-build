@@ -22,9 +22,11 @@ sudo ./<scriptname>.sh
 
 Installing cyclictest utility on Raspberry Pi:
 ```
-git clone git://git.kernel.org/pub/scm/linux/kernel/git/clrkwllms/rt-tests.git 
+git clone git://git.kernel.org/pub/scm/utils/rt-tests/rt-tests.git
 cd rt-tests
+git checkout stable/v1.0
 make all
+make install
 cp ./cyclictest /usr/bin/
 cd ~
 ```
