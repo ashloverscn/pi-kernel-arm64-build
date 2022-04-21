@@ -29,7 +29,7 @@ mkdir $PROJECT_DIR
 cd $PROJECT_DIR
 
 # update && upgrade and install necessary dependency packages
-sudo apt update --allow-releaseinfo-change
+#sudo apt update --allow-releaseinfo-change
 sudo apt update 
 #sudo apt upgrade -y
 sudo apt install -y wget git bc bison flex libssl-dev make libc6-dev libncurses5-dev crossbuild-essential-armhf crossbuild-essential-arm64
