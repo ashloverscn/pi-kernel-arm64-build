@@ -80,12 +80,10 @@ make ARCH=$ARCH CROSS_COMPILE=$COMPILER INSTALL_MOD_PATH=$EXT4_DIR modules_insta
 cp arch/$ARCH/boot/$LINUX $FAT32_DIR/$KERNEL.img
 if [ $LINUX = "zImage" ]
 then
-cp arch/$ARCH/boot/zImage /boot/$KERNEL.img
 cp arch/$ARCH/boot/dts/*.dtb /boot/
 fi
 if [ $LINUX = "Image" ]
 then
-cp arch/$ARCH/boot/Image /boot/$KERNEL.img
 cp arch/$ARCH/boot/dts/broadcom/*.dtb /boot/
 fi
 mkdir $FAT32_DIR/overlays
