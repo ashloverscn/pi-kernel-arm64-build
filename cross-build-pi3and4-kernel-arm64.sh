@@ -122,5 +122,6 @@ cp arch/$ARCH/boot/dts/overlays/*.dtb* $FAT32_DIR/overlays/
 cp arch/$ARCH/boot/dts/overlays/README $FAT32_DIR/overlays/
 
 echo "All complete files copied to result directory under rt-kernel directory"
-
+echo "transfer the $FAT32_DIR to sd card boot partition and $EXT4_DIR to the rootfs partition"
+echo "make sure to add kernel=$KERNEL in the boot/config.txt file"
 
