@@ -89,6 +89,7 @@ CONFIG_PERF_EVENTS=y
 " > .config-fragment
 
 # Merging the rt configuration .config-fragment to generated .config file
+ARCH=$ARCH CROSS_COMPILE=$COMPILER ./scripts/kconfig/merge_config.sh .config .config-fragment
 
 # Configure the kernel
 # At this step, select "General setup" --> "Preemption Model" --> "Fully Preemptible Kernel (Real-Time)"
