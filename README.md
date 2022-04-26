@@ -22,6 +22,7 @@ sudo ./<scriptname>.sh
 
 Installing cyclictest utility on Raspberry Pi:
 ```
+sudo apt-get install build-essential libnuma-dev
 git clone git://git.kernel.org/pub/scm/utils/rt-tests/rt-tests.git
 cd rt-tests
 git checkout stable/v1.0
