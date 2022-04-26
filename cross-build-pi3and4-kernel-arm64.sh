@@ -61,6 +61,35 @@ patch -p1 < ../patch-$RT_PATCH_VERSION.patch
 make ARCH=$ARCH CROSS_COMPILE=$COMPILER mrproper
 make ARCH=$ARCH CROSS_COMPILE=$COMPILER $DEFCONFIG
 
+# Creating the .config-fragment file
+echo "CONFIG_PREEMPT_RT=y
+CONFIG_LOCKUP_DETECTOR=n
+CONFIG_DETECT_HUNG_TASK=n
+CONFIG_NO_HZ_FULL=y
+CONFIG_HZ_1000=y
+# CONFIG_AUFS_FS is not set
+CONFIG_CPU_FREQ=y
+CONFIG_CPU_FREQ_GOV_PERFORMANCE=y
+CONFIG_CPU_FREQ_GOV_ONDEMAND=y
+CONFIG_CPU_FREQ_DEFAULT_GOV_PERFORMANCE=y
+CONFIG_CPU_IDLE=n
+CONFIG_LTTNG=y
+# CONFIG_LTTNG_EXPERIMENTAL_BITWISE_ENUM is not set
+CONFIG_LTTNG_CLOCK_PLUGIN_TEST=y
+CONFIG_MODULES=y
+CONFIG_KALLSYMS=y
+CONFIG_HIGH_RES_TIMERS=y
+CONFIG_TRACEPOINTS=y
+# CONFIG_KPROBES is not set
+CONFIG_HAVE_SYSCALL_TRACEPOINTS=y
+CONFIG_EVENT_TRACING=y
+CONFIG_PERF_EVENTS=y
+# CONFIG_KRETPROBES is not set
+# CONFIG_KALLSYMS_ALL is not set
+" > .config-fragment
+
+# Merging the rt configuration .config-fragment to generated .config file
+
 # Configure the kernel
 # At this step, select "General setup" --> "Preemption Model" --> "Fully Preemptible Kernel (Real-Time)"
 # For 64 bit processors, unselect (inside menu only, not whole tree) "Virtualization" -->  "Kernel-based Virtual Machine (KVM) support (NEW)"
