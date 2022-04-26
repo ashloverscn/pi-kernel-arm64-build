@@ -29,7 +29,7 @@ COMPILER=$TARGET-
 # Automatic Zone no input need after this
 # All work will be done in $PWD/rtkernel.  The final result will be packaged as $PWD/rtkernel/result
 PROJECT_DIR=`pwd`/rtkernel-$KERNEL_VERSION
-rm -rf $PROJECT_DIR
+#rm -rf $PROJECT_DIR
 mkdir $PROJECT_DIR
 cd $PROJECT_DIR
 
@@ -49,7 +49,7 @@ gunzip xf patch-$RT_PATCH_VERSION.patch.gz
 cd linux
 
 # clean previous build
-#make ARCH=$ARCH CROSS_COMPILE=$COMPILER clean
+make ARCH=$ARCH CROSS_COMPILE=$COMPILER clean
 
 # Need this to get precisely the correct kernel version
 git checkout $KERNEL_BRANCH
